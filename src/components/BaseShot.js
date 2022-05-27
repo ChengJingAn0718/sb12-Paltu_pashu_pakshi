@@ -18,7 +18,7 @@ const animationColorList = [
     ['#51c9b5', '#cc55d9', '#dfeb88']
 ]
 
-let titleAudio = new loadSound('Introduction/Intro 1');
+let titleAudio = new loadSound('intro/1');
 
 let clapAudio = new loadSound('clap', true);
 let backAudio = new loadSound('bMusic', true);
@@ -30,9 +30,10 @@ let replayAudio = new loadSound('replayAudio', true);
 let successAudio = new loadSound('success', true);
 
 
-let bodyAudio1 = new loadSound('Introduction/Intro 2');
-let bodyAudio2 = new loadSound('Introduction/Intro 3');
-let bodyAudio3 = new loadSound('Introduction/Intro 3');
+let bodyAudio1 = new loadSound('intro/1');
+let bodyAudio2 = new loadSound('intro/1');
+let bodyAudio3 = new loadSound('intro/1');
+
 
 let commonAudio1 = new loadSound('common/common1');
 let commonAudio2 = new loadSound('common/common2');
@@ -45,7 +46,7 @@ Array.from(Array(14).keys()).map(value => {
     subAudioList.push(new loadSound('word/' + (value + 1)))
 })
 
-backAudio.volume = 0.15;
+backAudio.volume = 0.08;
 
 wooAudio.volume = 0.8;
 successAudio.volume = 0.4;
