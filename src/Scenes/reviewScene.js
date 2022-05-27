@@ -291,8 +291,8 @@ const Scene1 = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
                     }}
                 >
 
-                    <BaseImage url="bg/green.png" />
-                    
+                    <BaseImage url="bg/green_bg.png" />
+
                     <div
                         style={{
                             position: "fixed", width: _geo.width * 0.5 + "px",
