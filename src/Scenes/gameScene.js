@@ -19,7 +19,6 @@ const firstStartNum = 1
 let isDisabled = false;
 const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => {
 
-
     const audioList = useContext(UserContext)
 
     const firstPartRef = useRef()
@@ -47,17 +46,19 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
         sceneStart: () => {
             parentRef.current.className = 'aniObject'
             startSecondPart()
+
+            setExtraVolume(audioList.commonAudio2, 4)
+            setExtraVolume(audioList.commonAudio1, 4)
         },
         sceneEnd: () => {
             setSceneLoad(false)
             stepCount = 0;
         }
-
     }))
 
     useEffect(() => {
 
-
+        setRepeatType(1)
 
         return () => {
             stepCount = 0;

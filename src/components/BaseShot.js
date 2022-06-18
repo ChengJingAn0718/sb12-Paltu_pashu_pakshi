@@ -28,16 +28,21 @@ let tingAudio = new loadSound('ting', true);
 let wooAudio = new loadSound('woo', true);
 let replayAudio = new loadSound('replayAudio', true);
 let successAudio = new loadSound('success', true);
+let excellentAudio = new loadSound('excellent', true);
 
 
 let bodyAudio1 = new loadSound('intro/1');
 let bodyAudio2 = new loadSound('intro/1');
 let bodyAudio3 = new loadSound('intro/1');
+let bodyAudio4 = new loadSound('intro/1');
 
 
 let commonAudio1 = new loadSound('common/common1');
 let commonAudio2 = new loadSound('common/common2');
 let commonAudio3 = new loadSound('common/common3');
+
+let reviewAudio = new loadSound('common/review0');
+let middleAudio = new loadSound('common/middle');
 
 let subAudioList = []
 
@@ -46,7 +51,7 @@ Array.from(Array(14).keys()).map(value => {
     subAudioList.push(new loadSound('word/' + (value + 1)))
 })
 
-backAudio.volume = 0.08;
+backAudio.volume = 0.04;
 
 wooAudio.volume = 0.8;
 successAudio.volume = 0.4;
@@ -77,6 +82,11 @@ let audioList = {
     commonAudio1,
     commonAudio2,
     commonAudio3,
+
+    reviewAudio,
+    middleAudio,
+    excellentAudio,
+    bodyAudio4,
 
     successAudio,
     ...subAudioList

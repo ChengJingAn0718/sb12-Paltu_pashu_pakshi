@@ -31,10 +31,10 @@ const Scene = React.forwardRef(({ nextFunc, loadFunc, _baseGeo }, ref) => {
             parentRef.current.className = 'aniObject'
             spakleRef.current.className = 'excellentText'
 
-            audioList.bodyAudio1.src = getAudioPath('common/welldone')
+
 
             timerList[0] = setTimeout(() => {
-                audioList.bodyAudio1.play().catch(error => { });
+                audioList.middleAudio.play().catch(error => { });
                 loadFunc()
             }, 1500);
 
@@ -58,6 +58,8 @@ const Scene = React.forwardRef(({ nextFunc, loadFunc, _baseGeo }, ref) => {
 
             for (let i = 0; i < timerList.length; i++)
                 clearTimeout(timerList[i])
+
+            audioList.middleAudio.src = getAudioPath('common/middle')
 
             setSceneLoad(false)
         }

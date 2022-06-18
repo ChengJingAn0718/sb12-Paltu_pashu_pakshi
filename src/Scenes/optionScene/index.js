@@ -81,8 +81,6 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
             setPrimaryAudio(audioList.bodyAudio2)
             setRepeatAudio(audioList.commonAudio1)
 
-
-
             parentObject.current.className = 'appear'
             parentObject.current.style.pointerEvents = ''
             timerList[0] = setTimeout(() => {
@@ -91,7 +89,7 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
                     audioList.bodyAudio2.play();
                     timerList[2] = setTimeout(() => {
                         startRepeatAudio()
-                        // audioList.commonAudio1.play();
+                        audioList.commonAudio1.play();
                     }, audioList.bodyAudio2.duration * 1000 + 300);
                 }, audioList.bodyAudio1.duration * 1000 + 300);
             }, 1500);
@@ -250,7 +248,7 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
             ],
             [
                 [3, 2, 1, 0], [3, 2, 0, 1],
-                [1, 0, 3, 2], [1, 0, 2, 3],
+                [1, 0, 3, 2], [1, 3, 0, 2],
                 [2, 3, 1, 0], [2, 3, 0, 1]
             ]
         ]

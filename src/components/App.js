@@ -93,6 +93,9 @@ const App = React.forwardRef(({ geo, _startTransition, baseGeo, bgLoaded }, ref)
   }
 
 
+
+
+
   return (
     <div >
       {
@@ -101,7 +104,7 @@ const App = React.forwardRef(({ geo, _startTransition, baseGeo, bgLoaded }, ref)
           <div>
             <TitleScene ref={sceneList[0]} _startTransition={_startTransition} nextFunc={nextFunc}
               _baseGeo={baseGeo} _geo={__geo} />
-            <ScaleScene ref={sceneList[1]}
+            <ScaleScene ref={sceneList[1]} 
               bgLoaded={loadScene} nextFunc={nextFunc} loadFunc={loadFunc} _startTransition={_startTransition}
               _baseGeo={baseGeo} _geo={__geo} />
             <MiddleDone ref={sceneList[2]} nextFunc={nextFunc} loadFunc={loadFunc} _baseGeo={baseGeo} _geo={__geo} />

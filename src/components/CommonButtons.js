@@ -1,7 +1,7 @@
 
 import React, { useRef, useState } from "react";
 import "../stylesheets/styles.css";
-import { prePathUrl } from "./CommonFunctions";
+import { prePathUrl, setExtraVolume } from "./CommonFunctions";
 
 var isFullScreen = false;
 var elem = document.documentElement;
@@ -81,8 +81,12 @@ const MusicButton = React.forwardRef((prop, ref) => {
         fomartSound: () => {
             setTimeout(() => {
                 currentRef.current.className = 'introText'
+                
                 prop.backAudio.currentTime = 0;
                 prop.backAudio.play().catch(error => { });
+
+                setExtraVolume(prop.backAudio, 1.5)
+
                 _setBackgroundPlaying(true);
 
             }, 500);

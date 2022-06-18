@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext, useState } from 'react';
 import "../stylesheets/styles.css";
 import BaseImage from '../components/BaseImage';
 import { UserContext } from '../components/BaseShot';
-import { getAudioPath, prePathUrl } from "../components/CommonFunctions";
+import { getAudioPath, prePathUrl, setExtraVolume } from "../components/CommonFunctions";
 import { MaskComponent } from "../components/CommonComponents"
 
 
@@ -99,12 +99,6 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, _startTransition
     useEffect(() => {
 
 
-
-
-        // setTimeout(() => {
-        //     showIndividualImage()
-        // }, 1000);
-
         return () => {
             currentMaskNum = 0;
             subMaskNum = 0
@@ -126,6 +120,10 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, _startTransition
 
             blackWhiteObject.current.style.transition = "0.5s"
             currentImage.current.style.transition = '0.5s'
+
+
+            setExtraVolume(audioList.bodyAudio1, 4)
+            setExtraVolume(audioList.bodyAudio2, 4)
 
 
             setTimeout(() => {

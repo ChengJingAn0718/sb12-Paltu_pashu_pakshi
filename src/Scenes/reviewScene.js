@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext, useState } from 'react';
 import "../stylesheets/styles.css";
 import BaseImage from '../components/BaseImage';
 import { UserContext } from '../components/BaseShot';
-import { prePathUrl, getAudioPath, setRepeatType, setRepeatAudio, startRepeatAudio, stopRepeatAudio } from "../components/CommonFunctions";
+import { prePathUrl, getAudioPath, setRepeatType, setRepeatAudio, startRepeatAudio, stopRepeatAudio, setExtraVolume } from "../components/CommonFunctions";
 import { textInfoList, iconList, gapList } from "../components/CommonVarariant"
 
 
@@ -64,8 +64,6 @@ const Scene1 = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
 
 
         let testNum = 0
-        // testFunction(testNum, true)
-        // testFunction(testNum, false)
 
         return () => {
             imageCount = 0;
@@ -86,21 +84,17 @@ const Scene1 = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
         if (!isRendered) {
             isRendered = true;
             timerList[6] = setTimeout(() => {
-                audioList.bodyAudio1.play();
+                audioList.reviewAudio.play();
 
-                // timerList[7] = setTimeout(() => {
-                //     audioList.bodyAudio2.play();
 
                 timerList[8] = setTimeout(() => {
                     audioList.commonAudio3.play()
                     startRepeatAudio()
 
-                    // }, audioList.bodyAudio2.duration * 1000 + 300);
-                }, audioList.bodyAudio1.duration * 1000 + 1000);
+                }, audioList.reviewAudio.duration * 1000 + 1000);
 
             }, 1500);
 
-            // baseObject.current.className = 'aniObject'
         }
     }
 
@@ -249,17 +243,19 @@ const Scene1 = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
 
             setRepeatType(2)
 
-            audioList.bodyAudio1.src = prePathUrl() + "sounds/main/common/review0.mp3"
-            audioList.bodyAudio2.src = prePathUrl() + "sounds/main/common/review1.mp3"
-
             imageCount = 0;
             isEffectPassed = true;
-
             clickedList = []
 
             baseObject.current.className = 'aniObject'
 
             setRepeatAudio(audioList.commonAudio3)
+
+            setExtraVolume(audioList.commonAudio3, 4)
+            setExtraVolume(audioList.reviewAudio, 4)
+
+            for (let i = 0; i < 14; i++)
+                setExtraVolume(audioList[i], 4)
 
         },
         sceneEnd: () => {
