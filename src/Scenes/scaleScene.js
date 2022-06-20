@@ -121,10 +121,8 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, _startTransition
             blackWhiteObject.current.style.transition = "0.5s"
             currentImage.current.style.transition = '0.5s'
 
-
             setExtraVolume(audioList.bodyAudio1, 4)
             setExtraVolume(audioList.bodyAudio2, 4)
-
 
             setTimeout(() => {
                 setSubMaskLoaded(true)
