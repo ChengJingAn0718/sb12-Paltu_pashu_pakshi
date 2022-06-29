@@ -29,13 +29,13 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc }, ref) => {
 
             loadFunc();
 
-            setExtraVolume(audioList.clapAudio, 1.5)
-            setExtraVolume(audioList.yeahAudio, 1.5)
-            setExtraVolume(audioList.tingAudio, 1.5)
-            setExtraVolume(audioList.buzzAudio, 1.5)
-            setExtraVolume(audioList.successAudio, 1.5)
+            setExtraVolume(audioList.clapAudio, 2.5)
+            setExtraVolume(audioList.yeahAudio, 2.5)
+            setExtraVolume(audioList.tingAudio, 2.5)
+            setExtraVolume(audioList.buzzAudio, 2.5)
+            setExtraVolume(audioList.successAudio, 2.5)
 
-            setExtraVolume(audioList.middleAudio, 4)
+            setExtraVolume(audioList.middleAudio, 6)
 
             timerList[0] = setTimeout(() => {
                 audioList.middleAudio.play().catch(error => { });

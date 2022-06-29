@@ -299,7 +299,6 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
                     audioList.bodyAudio2.play();
                     timerList[2] = setTimeout(() => {
                         startRepeatAudio()
-                        // audioList.commonAudio1.play();
                     }, audioList.bodyAudio2.duration * 1000 + 300);
                 }, 2000);
             }
